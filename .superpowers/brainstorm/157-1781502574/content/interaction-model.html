@@ -1,0 +1,98 @@
+<h2>How should users interact with the Prompt Generator?</h2>
+<p class="subtitle">This is the core UX decision — it shapes everything else</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="chat" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#0f172a;border-radius:8px;padding:12px;font-family:monospace;font-size:11px;color:#e2e8f0;min-height:140px">
+        <div style="background:#1e3a5f;border-radius:6px;padding:8px;margin-bottom:8px;max-width:80%">
+          <span style="color:#60a5fa;font-size:10px">Prompt Generator</span><br>
+          What sector are you building for?
+        </div>
+        <div style="background:#1e293b;border-radius:6px;padding:8px;margin-bottom:8px;max-width:70%;margin-left:auto;text-align:right">
+          Food and drinks
+        </div>
+        <div style="background:#1e3a5f;border-radius:6px;padding:8px;max-width:85%">
+          <span style="color:#60a5fa;font-size:10px">Prompt Generator</span><br>
+          Here are 5 ideas for a food & drinks webapp...
+        </div>
+        <div style="border:1px solid #334155;border-radius:6px;padding:6px;margin-top:10px;display:flex;gap:8px;align-items:center">
+          <span style="flex:1;color:#64748b;font-size:10px">Type your answer...</span>
+          <span style="background:#2563eb;border-radius:4px;padding:2px 8px;font-size:10px">Send</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Conversational Chat</h3>
+      <p>Looks and feels like messaging an AI. The app asks questions, the user types free-form replies. AI interprets and adapts dynamically.</p>
+      <div class="pros-cons" style="margin-top:8px">
+        <div class="pros"><h4>Pros</h4><ul><li>Natural, low friction</li><li>Flexible for any answer</li><li>Feels like Lovable/ChatGPT</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Needs AI backend (API key)</li><li>Users may go off-track</li><li>Harder to enforce structure</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="wizard" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f8fafc;border-radius:8px;padding:12px;font-size:11px;min-height:140px;border:1px solid #e2e8f0">
+        <div style="display:flex;gap:4px;margin-bottom:12px">
+          <div style="flex:1;height:4px;background:#2563eb;border-radius:4px"></div>
+          <div style="flex:1;height:4px;background:#2563eb;border-radius:4px"></div>
+          <div style="flex:1;height:4px;background:#e2e8f0;border-radius:4px"></div>
+          <div style="flex:1;height:4px;background:#e2e8f0;border-radius:4px"></div>
+        </div>
+        <div style="font-weight:700;color:#0f172a;margin-bottom:4px">Step 2 of 4: Choose Your Build</div>
+        <div style="color:#64748b;font-size:10px;margin-bottom:10px">Select one of these 5 app ideas for Food & Drinks</div>
+        <div style="display:grid;gap:4px">
+          <div style="border:2px solid #2563eb;border-radius:4px;padding:6px;background:#eff6ff;font-size:10px;color:#1d4ed8">✓ Online Menu + Order Form</div>
+          <div style="border:1px solid #e2e8f0;border-radius:4px;padding:6px;font-size:10px;color:#475569">Reservations Dashboard</div>
+          <div style="border:1px solid #e2e8f0;border-radius:4px;padding:6px;font-size:10px;color:#475569">Inventory Tracker</div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;margin-top:10px">
+          <div style="background:#2563eb;color:white;border-radius:4px;padding:4px 12px;font-size:10px">Next Step →</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Step-by-Step Wizard</h3>
+      <p>Classic multi-step form. Progress bar at top, one focused question per screen, structured inputs (dropdowns, radio buttons, text fields).</p>
+      <div class="pros-cons" style="margin-top:8px">
+        <div class="pros"><h4>Pros</h4><ul><li>Very structured output</li><li>No AI backend needed</li><li>Easy to build in Lovable</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Less flexible for "other" cases</li><li>Feels like a form, not intelligence</li><li>Harder to offer contextual help</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="hybrid" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f8fafc;border-radius:8px;padding:12px;font-size:11px;min-height:140px;border:1px solid #e2e8f0">
+        <div style="background:#0f172a;border-radius:6px;padding:8px;margin-bottom:8px">
+          <span style="color:#60a5fa;font-size:10px">Step 1</span>
+          <div style="color:#e2e8f0;margin-top:2px">What sector are you in?</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">
+            <span style="background:#1e3a5f;border:1px solid #2563eb;color:#60a5fa;border-radius:12px;padding:2px 8px;font-size:10px">Food & Drinks</span>
+            <span style="background:#1e293b;color:#94a3b8;border-radius:12px;padding:2px 8px;font-size:10px">Furniture</span>
+            <span style="background:#1e293b;color:#94a3b8;border-radius:12px;padding:2px 8px;font-size:10px">Ceramics</span>
+            <span style="background:#1e293b;color:#94a3b8;border-radius:12px;padding:2px 8px;font-size:10px">Toys</span>
+            <span style="background:#1e293b;color:#94a3b8;border-radius:12px;padding:2px 8px;font-size:10px">+ Other</span>
+          </div>
+        </div>
+        <div style="background:#0f172a;border-radius:6px;padding:8px">
+          <span style="color:#60a5fa;font-size:10px">Step 2 — AI generated for you</span>
+          <div style="color:#e2e8f0;margin-top:2px">5 ideas for Food & Drinks:</div>
+          <div style="color:#94a3b8;font-size:10px;margin-top:4px">• Online menu + ordering<br>• Reservation system<br>• Loyalty card app...</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Hybrid (Structured + AI-Assist)</h3>
+      <p>Guided steps with clickable options, but AI generates the 5 build suggestions and compiles the final master prompt. Best of both worlds.</p>
+      <div class="pros-cons" style="margin-top:8px">
+        <div class="pros"><h4>Pros</h4><ul><li>Structured AND intelligent</li><li>AI only where it adds value</li><li>Fast and low-friction</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Needs API key for AI parts</li><li>Slightly more complex to build</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>
